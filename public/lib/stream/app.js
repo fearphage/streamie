@@ -12,10 +12,8 @@ if(typeof console == "undefined") {
   }
 }
 require.def("stream/app",
-  ["stream/text", "stream/gTranslateProc", "stream/tweetstream", "stream/tweet", "stream/settings", "stream/streamplugins", "stream/initplugins", "stream/linkplugins", "stream/settingsDialog", "stream/client", "stream/status", "stream/versionControl", "stream/tracking", "stream/modernizr", "//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"],
-  function(text, gTranslateProc, tweetstream, tweetModule, settings, streamPlugin, initPlugin, linkPlugin, settingsDialog, client, status) {
-    
-    text.replaceInPage();
+  ["stream/gTranslateProc", "stream/tweetstream", "stream/tweet", "stream/settings", "stream/streamplugins", "stream/initplugins", "stream/linkplugins", "stream/settingsDialog", "stream/client", "stream/status", "stream/versionControl", "stream/tracking", "stream/modernizr"],
+  function(gTranslateProc, tweetstream, tweetModule, settings, streamPlugin, initPlugin, linkPlugin, settingsDialog, client, status) {
     
     // Stream plugins are called in the order defined here for each incoming tweet.
     // Important: Stream plugins have to call this() to continue the execution!
@@ -58,6 +56,7 @@ require.def("stream/app",
       initPlugin.registerWebkitNotifications,
       initPlugin.throttableNotifactions,
       initPlugin.background,
+      initPlugin.embedly,
       status.age,
       status.observe,
       status.mediaUpload,

@@ -52,16 +52,16 @@
 	<meta http-equiv="X-UA-Compatible" content="chrome=1" />
 	<base target="_blank" />
 	<meta name="language" content="en-US" />
-	<link rel="stylesheet" type="text/css" href="css/streamie.less.css" media="screen,projection,print" />
-	<script src="ext/less-1.0.35.min.js"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="css/streamie.less.css" media="screen,projection,print" /> -->
+	
 	<!-- 
-	We use less.js: http://github.com/cloudhead/less.js/tree/ 
+	We use less.js: http://github.com/cloudhead/less.js/tree/ -->
 	<link rel="stylesheet/less" type="text/css" href="css/streamie.less" media="screen,projection,print" />
+	<script src="ext/less-1.0.35.min.js"></script>
 	<script>
 	  less.refresh(true); // localstorage caching is bad for frequent releases
 	</script>
-	-->
-	<script type="text/javascript" src="//www.google.com/jsapi">
+	<script type="text/javascript" src="http://www.google.com/jsapi">
 	</script>
 	<script type="text/javascript">
 	  google.load("language", "1");
@@ -70,10 +70,11 @@
 </head>
 
 <body id="www-streamie-org" class="loading">
+	<div id="embed"></div>
 	<div id="container">
 		<div id="header">
-			<h1 id="logo"><a href="#" target="_self" class="i18n">streamie beta for <span id="currentuser-screen_name"></span></a></h1>
-			<div id="meta"><a href="#" class="logout i18n">Logout</a></div>
+			<h1 id="logo"><a href="#" target="_self">NodeCamps's Streamie for <span id="currentuser-screen_name"></span></a></h1>
+			<div id="meta"><a href="#" class="logout">Logout</a></div>
 			<ul id="mainnav">
 				<li class="activatable rpl"><a href="#mention" class="i18n" title="Mentions" target="_self">@</a></li>
 				<li class="activatable timeline active"><a href="#all" class="i18n" title="Show All" target="_self">⚛</a></li>
@@ -169,7 +170,8 @@
 			<input type="button" value="Cancel" class="button close i18n" />
 		</div>
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="http://scripts.embed.ly/jquery.embedly.min.js"></script>
 	<script src="/ext/underscore.js"></script>
 	<script src="ext/socket.io/socket.io.js"></script>
 	<!-- We use require.js for loading dependencies http://requirejs.org/ -->
@@ -187,6 +189,7 @@
       }
     );
   </script>
+  
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
